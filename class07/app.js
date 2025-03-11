@@ -4,11 +4,11 @@ import mongoose from "mongoose";
 const app = express();
 const PORT = 2020;
 
-const mongoURI = "mongodb+srv://shoukatrai:shoukat123@cluster0.tde8j.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+const URI = "mongodb+srv://shoukatrai:shoukat123@cluster0.tde8j.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 
 
 
-mongoose.connect(mongoURI)
+mongoose.connect(URI)
 .then(()=>{
     console.log("MongoDB connected")
 })
@@ -16,10 +16,10 @@ mongoose.connect(mongoURI)
     console.log("MongoDB not connected", error.message)
 })
 
-// app.get("/", (req, res)=>{
-//     console.log(req.url)
-//     res.send("Hello server from")
-// })
+app.get("/", (req, res)=>{
+    console.log(req.url)
+    res.send("Hello server from")
+})
 
 
 app.listen(PORT, ()=>console.log("Server running"))

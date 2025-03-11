@@ -33,8 +33,6 @@ app.post("/createuser", async (request, response) => {
             data: null
         })
     }
-
-
 })
 
 
